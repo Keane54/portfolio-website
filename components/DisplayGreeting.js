@@ -24,7 +24,7 @@ const DisplayGreeting = () => {
         }
     }
 
-    return <Box component="span">{greeting}</Box>
+    return <Box component="span">{greeting} </Box>
 }
 
 export default DisplayGreeting

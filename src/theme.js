@@ -22,6 +22,7 @@ const theme = createTheme({
     }
   }, typography: {
     "fontFamily": `'League Spartan', 'sans-serif'`,
+    fontWeightRegular: 300
   }
 });
 
