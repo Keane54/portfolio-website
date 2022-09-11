@@ -14,17 +14,17 @@ const DisplayGreeting = () => {
         const currentHours = currentDate.getHours()
 
         if (currentHours >= 0 && currentHours < 12) {
-            return setGreeting("Good Morning")
+            return setGreeting("Morning")
         }
         else if (currentHours >= 12 && currentHours < 18) {
-            return setGreeting("Good Afternoon")
+            return setGreeting("Afternoon")
         }
-        else if (currentHours >= 18 && currentHours < 0) {
-            return setGreeting("Good Evening")
+        else if (currentHours >= 18) {
+            return setGreeting("Evening")
         }
     }
 
-    return <Box component="span">{greeting} </Box>
+    return <Box component="span"> {greeting} </Box>
 }
 
 export default DisplayGreeting

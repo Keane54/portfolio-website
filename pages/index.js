@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
 import DisplayGreeting from '../components/DisplayGreeting';
@@ -27,6 +27,7 @@ export default function Home() {
       }}}>
         <Box>
           <Typography fontSize={70} lineHeight={0.9}>
+            Good
             <DisplayGreeting/>
             - I&apos;m <Box component='span'>Oliver</Box>
           </Typography>
@@ -36,13 +37,25 @@ export default function Home() {
             <Box component='span'> Blockchain Enthusiast</Box>
           </Typography>
 
-          <Typography>
+          <Typography sx={{maxWidth: '520px', fontSize: 22, mt: 2}}>
             I&apos;m a developer specialising in
             <Box component='span'> React </Box> 
             &amp; 
             <Box component='span'> NextJS</Box>
             , and enjoy working with communities and likeminded people to build tools for everyday users.
           </Typography>
+
+          <Button sx={{
+            mt: 3,
+            textTransform: 'none', 
+            border: `solid 2px ${palette.primary.main}`,
+            fontSize: 22,
+            px: 5,
+            py: 1.75,
+            borderRadius: 2
+          }}>
+            View my work!
+          </Button>
         </Box>
       </Container>
     </>

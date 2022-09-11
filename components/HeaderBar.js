@@ -3,25 +3,28 @@ import { Box, Container } from '@mui/system'
 import Image from 'next/image'
 import { keyframes } from '@emotion/react'
 
-const HeaderBar = ( { palette } ) => {
-    const squidWiggle = keyframes`
-        0% {
-            transform: scale(1) rotate(0deg);
-        }
-        60% {
-            transform: scale(1.2) rotate(0deg);
-        }
-        75% {
-            transform: scale(1.1) rotate(10deg);
-        }
-        90% {
-            transform: scale(1.15) rotate(-10deg);
-        }
-        100% {
-            transform: scale(1.2) rotate(0deg);
-        }
-    `;
+const squidWiggle = keyframes`
+0% {
+    transform: scale(1) rotate(0deg);
+}
+50% {
+    transform: scale(1.2) rotate(0deg);
+}
+60% {
+    transform: scale(1.1) rotate(10deg);
+}
+70% {
+    transform: scale(1.1) rotate(0deg);
+}
+80% {
+    transform: scale(1.15) rotate(-10deg);
+}
+100% {
+    transform: scale(1.2) rotate(0deg);
+}
+`;
 
+const HeaderBar = ( { palette } ) => {
     return (
         <AppBar elevation={0} sx={{background: 'white', color:'black', position: 'static'}}>
             <Container>
