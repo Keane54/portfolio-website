@@ -2,10 +2,8 @@ import { AppBar, Toolbar, Typography, useMediaQuery } from '@mui/material'
 import { Box, Container } from '@mui/system'
 import Image from 'next/image'
 import { keyframes } from '@emotion/react'
-import { useContext, useState } from 'react';
 import DesktopMenu from './DesktopMenu';
 import MobileSidebar from './MobileSidebar';
-import { MenuStatus } from '../pages';
 
 const squidWiggle = keyframes`
 0% {
