@@ -1,7 +1,7 @@
 import { Button, Typography, useMediaQuery } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import DisplayGreeting from '../components/DisplayGreeting';
 import FixedWidgets from '../components/FixedWidgets';
 import HeaderBar from '../components/HeaderBar';
@@ -14,6 +14,10 @@ export default function Home() {
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
 
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (isDesktop && open) setOpen(false) 
+  }, [isDesktop, open])
 
   return (
     <>
@@ -35,8 +39,8 @@ export default function Home() {
             '& .MuiTypography-root > .MuiBox-root': {
               color: theme.palette.primary.main, 
               fontWeight: 500
-            }, '@media (max-width: 1200px) and (min-width: 900px)': {
-              px: 8
+            }, '@media (max-width: 1280px) and (min-width: 900px)': {
+              px: 12
             }
           }}>
 

@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, useMediaQuery } from '@mui/material'
+import { AppBar, Toolbar, useMediaQuery } from '@mui/material'
 import { Box, Container } from '@mui/system'
 import Image from 'next/image'
 import { keyframes } from '@emotion/react'
@@ -32,8 +32,8 @@ const HeaderBar = ( { theme } ) => {
     return (
         <AppBar elevation={0} sx={{background: 'white', color:'black', position: 'static'}}>
             <Container sx={{
-                '@media (max-width: 1200px) and (min-width: 900px)': {
-                px: 8
+                '@media (max-width: 1280px) and (min-width: 900px)': {
+                px: 12
             }}}>
 
             <Toolbar sx={{justifyContent: 'space-between', alignItems: 'center'}} disableGutters>

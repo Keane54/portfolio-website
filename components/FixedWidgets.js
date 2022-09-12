@@ -44,16 +44,12 @@ const FixedWidgets = ( { theme } ) => {
 
     return (
         <>
-            <Box sx={{...sharedStyles, left: 50, '@media (max-width: 1200px)': {
-                left: 20
-            }}}>
+            <Box sx={{...sharedStyles, left: 50}}>
                 <Box className="iconWidget" sx={{mask: 'url(/githubmark.svg) no-repeat center'}}/>
                 <Box className="iconWidget" sx={{mask: 'url(/instagram.svg) no-repeat center'}}/>
                 <Box className="iconWidget" sx={{mask: 'url(/linkedin.svg) no-repeat center'}}/>
             </Box>
-            <Box sx={{...sharedStyles, right: 50, '@media (max-width: 1200px)': {
-                right: 20
-            }}}>
+            <Box sx={{...sharedStyles, right: 50}}>
                 <Typography className="emailWidget">ollyfudgey5@gmail.com</Typography>
             </Box>
         </>
