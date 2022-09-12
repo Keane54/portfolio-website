@@ -1,7 +1,11 @@
-import { AppBar, Toolbar, Typography } from '@mui/material'
+import { AppBar, Toolbar, Typography, useMediaQuery } from '@mui/material'
 import { Box, Container } from '@mui/system'
 import Image from 'next/image'
 import { keyframes } from '@emotion/react'
+import { useContext, useState } from 'react';
+import DesktopMenu from './DesktopMenu';
+import MobileSidebar from './MobileSidebar';
+import { MenuStatus } from '../pages';
 
 const squidWiggle = keyframes`
 0% {
@@ -24,15 +28,23 @@ const squidWiggle = keyframes`
 }
 `;
 
-const HeaderBar = ( { palette } ) => {
+const HeaderBar = ( { theme } ) => {
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+
     return (
         <AppBar elevation={0} sx={{background: 'white', color:'black', position: 'static'}}>
-            <Container>
+            <Container sx={{
+                '@media (max-width: 1200px) and (min-width: 900px)': {
+                px: 8
+            }}}>
 
-            <Toolbar sx={{justifyContent: 'space-between'}} disableGutters>
+            <Toolbar sx={{justifyContent: 'space-between', alignItems: 'center'}} disableGutters>
 
-                <Box sx={{overflow: 'visible !important', '& span': {
-                        overflow: 'visible !important'
+                <Box sx={{
+                    overflow: 'visible !important', 
+                    '& span': {
+                        overflow: 'visible !important',
+                        display: 'block'
                     }, '& img': {
                         transition: 'transform 300ms ease-in-out'
                     }, '& img:hover': {
@@ -52,20 +64,12 @@ const HeaderBar = ( { palette } ) => {
                         fontSize: '1.15rem',
                         fontFamily: `'Roboto Slab', "serif"`,
                         "& .MuiBox-root": {
-                            color: palette.primary.main
+                            color: theme.palette.primary.main
                         }
                     }
                 }}>
 
-                    <Typography>
-                        <Box component="span">01</Box>. About
-                    </Typography>
-                    <Typography>
-                        <Box component="span">02</Box>. Work
-                    </Typography>
-                    <Typography>
-                        <Box component="span">03</Box>. Contact
-                    </Typography>
+                {isDesktop ? <DesktopMenu/> : <MobileSidebar/>}
 
                 </Box>
 
