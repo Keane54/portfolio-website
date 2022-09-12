@@ -11,13 +11,13 @@ const squidWiggle = keyframes`
     transform: scale(1.2) rotate(0deg);
 }
 60% {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.2) rotate(10deg);
 }
 70% {
-    transform: scale(1.1) rotate(0deg);
+    transform: scale(1.2) rotate(0deg);
 }
 80% {
-    transform: scale(1.15) rotate(-10deg);
+    transform: scale(1.2) rotate(-10deg);
 }
 100% {
     transform: scale(1.2) rotate(0deg);
@@ -34,7 +34,7 @@ const HeaderBar = ( { palette } ) => {
                 <Box sx={{overflow: 'visible !important', '& span': {
                         overflow: 'visible !important'
                     }, '& img': {
-                        transition: 'transform 300ms ease-in-out '
+                        transition: 'transform 300ms ease-in-out'
                     }, '& img:hover': {
                         transform: 'scale(1.2)',
                         animation: `${squidWiggle} 0.75s ease`
