@@ -61,8 +61,15 @@ const HeaderBar = ( { theme } ) => {
                     "& .MuiTypography-root": {
                         fontSize: '1.15rem',
                         fontFamily: `'Roboto Slab', "serif"`,
+                        transition: 'all 200ms ease-in-out',
+                        '&:hover': {
+                            cursor: 'pointer',
+                            color: theme.palette.primary.main,
+                            transform: 'scale(1.05)',
+                        },
                         "& .MuiBox-root": {
-                            color: theme.palette.primary.main
+                            color: theme.palette.primary.main,
+                            transition: 'all 200ms ease-in-out',
                         }
                     }
                 }}>
