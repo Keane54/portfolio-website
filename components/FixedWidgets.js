@@ -3,7 +3,7 @@ import { Container } from "@mui/system"
 import Image from "next/image"
 
 
-const FixedWidgets = () => {
+const FixedWidgets = ( { palette } ) => {
 
     // Spread styles into sx prop to avoid repetition.
     const sharedStyles = {
@@ -20,21 +20,34 @@ const FixedWidgets = () => {
             width: '1px',
             height: '90px',
             backgroundColor: 'black'
-        },
-        '&& > *': {
-            cursor: 'pointer'
+        }, '& .iconWidget': {
+            maskSize: 'contain', 
+            width: '20px', 
+            height: '20px', 
+            backgroundColor: 'black',
+            cursor: 'pointer',
+            transition: 'all 200ms ease-in-out'
+        }, '& .emailWidget': {
+            cursor: 'pointer',
+            transition: 'all 200ms ease-in-out'
+        }, '& .iconWidget:hover': {
+            transform: 'scale(1.15) translateY(-2px)',
+            backgroundColor: palette.primary.main
+        }, '& .emailWidget:hover': {
+            transform: 'translateY(-5px)',
+            color: palette.primary.main
         }
     }
 
     return (
         <>
             <Box sx={{...sharedStyles, left: 50}}>
-                <Image src='/githubmark.svg' alt='' width='20' height='20'/>
-                <Image src='/instagram.svg' alt='' width='20' height='20'/>
-                <Image src='/linkedin.svg' alt='' width='20' height='20'/>
+                <Box className="iconWidget" sx={{mask: 'url(/githubmark.svg) no-repeat center'}}/>
+                <Box className="iconWidget" sx={{mask: 'url(/instagram.svg) no-repeat center'}}/>
+                <Box className="iconWidget" sx={{mask: 'url(/linkedin.svg) no-repeat center'}}/>
             </Box>
             <Box sx={{...sharedStyles, right: 50}}>
-                <Typography>ollyfudgey5@gmail.com</Typography>
+                <Typography className="emailWidget">ollyfudgey5@gmail.com</Typography>
             </Box>
         </>
     )
