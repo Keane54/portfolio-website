@@ -1,13 +1,13 @@
-import { Avatar, Button, Typography, useMediaQuery } from '@mui/material';
-import { Box, Container, useTheme, Stack, palette } from '@mui/system';
+import { Button, Typography, useMediaQuery } from '@mui/material';
+import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
 import { createContext, useEffect, useState } from 'react';
 import AboutHeader from '../components/about-me/AboutHeader';
 import Blurb from '../components/about-me/Blurb';
-import MyPhoto from '../components/about-me/MyPhoto';
 import DisplayGreeting from '../components/DisplayGreeting';
 import FixedWidgets from '../components/FixedWidgets';
 import HeaderBar from '../components/header/HeaderBar';
+import MyPhoto from '../components/about-me/MyPhoto';
 
 export const MenuStatus = createContext()
 
@@ -83,7 +83,7 @@ export default function Home() {
           <Container disableGutters sx={{mt: 16}}>
             <Box>
 
-              <AboutHeader/>
+              <AboutHeader theme={theme} isDesktop={isDesktop}/>
 
               <Box sx={{
                 display: 'flex', 
@@ -92,7 +92,7 @@ export default function Home() {
               }}>
 
                 <Blurb isDesktop={isDesktop}/>
-                <MyPhoto/>
+                <MyPhoto isDesktop={isDesktop}/>
                 
               </Box>
 

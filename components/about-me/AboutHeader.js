@@ -1,6 +1,6 @@
 import { Typography, Box } from "@mui/material"
 
-const AboutHeader = () => {
+const AboutHeader = ({ theme, isDesktop}) => {
     return (
         <Typography sx={{
             fontSize: 22, 
