@@ -45,12 +45,29 @@ const FixedWidgets = ( { theme } ) => {
     return (
         <>
             <Box sx={{...sharedStyles, left: 50}}>
-                <Box className="iconWidget" sx={{mask: 'url(/githubmark.svg) no-repeat center'}}/>
-                <Box className="iconWidget" sx={{mask: 'url(/instagram.svg) no-repeat center'}}/>
-                <Box className="iconWidget" sx={{mask: 'url(/linkedin.svg) no-repeat center'}}/>
+                <Box className="iconWidget" sx={{mask: 'url(/githubmark.svg) no-repeat center'}}>
+                    <a href="https://github.com/Keane54" target='_blank' rel="noreferrer" 
+                    style={{height: '20px', width: '20px', display: 'block'}}></a>
+                </Box>
+                <Box className="iconWidget" sx={{mask: 'url(/instagram.svg) no-repeat center'}}>
+                    <a href="https://www.instagram.com/ollykeane41/" target='_blank' rel="noreferrer" 
+                    style={{height: '20px', width: '20px', display: 'block'}}></a>
+                </Box>
+                <Box className="iconWidget" sx={{mask: 'url(/linkedin.svg) no-repeat center'}}>
+                    <a href="https://www.linkedin.com/in/oliver-k-918673108/" target='_blank' rel="noreferrer" 
+                    style={{height: '20px', width: '20px', display: 'block'}}></a>
+                </Box>
             </Box>
             <Box sx={{...sharedStyles, right: 50}}>
-                <Typography className="emailWidget">ollyfudgey5@gmail.com</Typography>
+                <Typography className="emailWidget" >
+                        <a href="mailto:ollyfudgey5@gmail.com" target='_blank' rel="noreferrer"
+                        style={{
+                                textDecoration: 'none', 
+                                color: 'inherit'
+                            }}>
+                            ollyfudgey5@gmail.com
+                        </a>
+                    </Typography>
             </Box>
         </>
     )
