@@ -1,7 +1,10 @@
-import { Button, Typography, useMediaQuery } from '@mui/material';
-import { Box, Container, useTheme } from '@mui/system';
+import { Avatar, Button, Typography, useMediaQuery } from '@mui/material';
+import { Box, Container, useTheme, Stack, palette } from '@mui/system';
 import Head from 'next/head'
 import { createContext, useEffect, useState } from 'react';
+import AboutHeader from '../components/about-me/AboutHeader';
+import Blurb from '../components/about-me/Blurb';
+import MyPhoto from '../components/about-me/MyPhoto';
 import DisplayGreeting from '../components/DisplayGreeting';
 import FixedWidgets from '../components/FixedWidgets';
 import HeaderBar from '../components/header/HeaderBar';
@@ -11,7 +14,7 @@ export const MenuStatus = createContext()
 export default function Home() {
   const theme = useTheme()
 
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'))
 
   const [open, setOpen] = useState(false)
 
@@ -28,7 +31,7 @@ export default function Home() {
       </Head>
 
       
-      <MenuStatus.Provider value={[open, setOpen]}>
+      <MenuStatus.Provider value={{open: open, setOpen: setOpen, isDesktop: isDesktop}}>
         <HeaderBar theme={theme}/>
 
         <Container maxWidth={'lg'} 
@@ -36,7 +39,7 @@ export default function Home() {
             filter: open ? 'blur(6px)' : 'none',
             transition: 'filter 200ms ease-in-out',
             marginTop: 6, 
-            '& .MuiTypography-root > .MuiBox-root': {
+            '& .highlightedText': {
               color: theme.palette.primary.main, 
               fontWeight: 500
             }, '@media (max-width: 1280px) and (min-width: 900px)': {
@@ -48,19 +51,19 @@ export default function Home() {
             <Typography fontSize={70} lineHeight={1.1}>
               Good
               <DisplayGreeting/>
-              - I&apos;m <Box component='span'>Oliver</Box>
+              - I&apos;m <Box className='highlightedText' component='span'>Oliver</Box>
             </Typography>
             <Typography sx={{fontSize: 40}}>
-              <Box component='span'>Front End Developer </Box>
+              <Box className='highlightedText' component='span'>Front End Developer </Box>
               &amp;
-              <Box component='span'> Blockchain Enthusiast</Box>
+              <Box className='highlightedText' component='span'> Blockchain Enthusiast</Box>
             </Typography>
 
             <Typography sx={{maxWidth: '520px', fontSize: 22, mt: 2.2}}>
               I&apos;m a developer specialising in
-              <Box component='span'> NextJS </Box> 
+              <Box className='highlightedText' component='span'> NextJS </Box> 
               &amp; 
-              <Box component='span'> React</Box>
+              <Box className='highlightedText' component='span'> React</Box>
               , and enjoy working with communities and likeminded people to build tools for everyday users.
             </Typography>
 
@@ -76,6 +79,26 @@ export default function Home() {
               View my work!
             </Button>
           </Box>
+
+          <Container disableGutters sx={{mt: 16}}>
+            <Box>
+
+              <AboutHeader/>
+
+              <Box sx={{
+                display: 'flex', 
+                position: 'relative',
+                flexDirection: isDesktop ? 'row' : 'column'
+              }}>
+
+                <Blurb isDesktop={isDesktop}/>
+                <MyPhoto/>
+                
+              </Box>
+
+
+            </Box>
+          </Container>
 
           <FixedWidgets theme={theme}/>
 

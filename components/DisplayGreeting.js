@@ -24,7 +24,7 @@ const DisplayGreeting = () => {
         }
     }
 
-    return <Box component="span"> {greeting} </Box>
+    return <Box className='highlightedText' component="span"> {greeting} </Box>
 }
 
 export default DisplayGreeting

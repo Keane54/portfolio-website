@@ -1,7 +1,4 @@
 import { Box, Typography } from "@mui/material"
-import { Container } from "@mui/system"
-import Image from "next/image"
-
 
 const FixedWidgets = ( { theme } ) => {
 
@@ -44,7 +41,7 @@ const FixedWidgets = ( { theme } ) => {
 
     return (
         <>
-            <Box sx={{...sharedStyles, left: 50}}>
+            <Box sx={{...sharedStyles, left: 40}}>
                 <Box className="iconWidget" sx={{mask: 'url(/githubmark.svg) no-repeat center'}}>
                     <a href="https://github.com/Keane54" target='_blank' rel="noreferrer" 
                     style={{height: '20px', width: '20px', display: 'block'}}></a>
@@ -58,7 +55,7 @@ const FixedWidgets = ( { theme } ) => {
                     style={{height: '20px', width: '20px', display: 'block'}}></a>
                 </Box>
             </Box>
-            <Box sx={{...sharedStyles, right: 50}}>
+            <Box sx={{...sharedStyles, right: 40}}>
                 <Typography className="emailWidget" >
                         <a href="mailto:ollyfudgey5@gmail.com" target='_blank' rel="noreferrer"
                         style={{

@@ -3,14 +3,11 @@ import { ClickAwayListener } from "@mui/material"
 import { useContext } from "react"
 import { MenuStatus } from "../../pages"
 import MobileSidebarContent from "./MobileSidebarContent"
-import { useTheme } from "@emotion/react"
 import BurgerButton from "./BurgerButton"
 
 const MobileSidebar = () => {
 
-    const theme = useTheme()
-
-    const [open, setOpen] = useContext(MenuStatus)
+    const {open, setOpen} = useContext(MenuStatus)
 
     return (
         <ClickAwayListener onClickAway={() => open === true ? setOpen(!open) : null}>

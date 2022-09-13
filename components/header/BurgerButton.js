@@ -6,7 +6,7 @@ import { MenuStatus } from "../../pages"
 const BurgerButton = () => {
     const theme = useTheme()
 
-    const [open, setOpen] = useContext(MenuStatus)
+    const {open, setOpen} = useContext(MenuStatus)
 
     return (
         <Box onClick={() => setOpen(!open)} sx={{
@@ -59,7 +59,6 @@ const BurgerButton = () => {
 
                     }
                 }}>
-
                 </Box>
             </Box>
         </Box>

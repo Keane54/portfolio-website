@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { keyframes } from '@emotion/react'
 import DesktopMenu from './DesktopMenu';
 import MobileSidebar from './MobileSidebar';
+import { useContext } from 'react';
+import { MenuStatus } from '../../pages';
 
 const squidWiggle = keyframes`
 0% {
@@ -27,7 +29,8 @@ const squidWiggle = keyframes`
 `;
 
 const HeaderBar = ( { theme } ) => {
-    const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+    
+    const {isDesktop} = useContext(MenuStatus)
 
     return (
         <AppBar elevation={0} sx={{background: 'white', color:'black', position: 'static'}}>
