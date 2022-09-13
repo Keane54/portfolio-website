@@ -1,7 +1,7 @@
 import { useTheme } from "@emotion/react"
 import { Box } from "@mui/system"
 import { useContext } from "react"
-import { MenuStatus } from "../pages"
+import { MenuStatus } from "../../pages"
 
 const BurgerButton = () => {
     const theme = useTheme()

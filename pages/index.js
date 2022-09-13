@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { createContext, useEffect, useState } from 'react';
 import DisplayGreeting from '../components/DisplayGreeting';
 import FixedWidgets from '../components/FixedWidgets';
-import HeaderBar from '../components/HeaderBar';
+import HeaderBar from '../components/header/HeaderBar';
 
 export const MenuStatus = createContext()
 

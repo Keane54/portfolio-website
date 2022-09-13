@@ -1,7 +1,7 @@
 import { Box } from "@mui/system"
 import { ClickAwayListener } from "@mui/material"
 import { useContext } from "react"
-import { MenuStatus } from "../pages"
+import { MenuStatus } from "../../pages"
 import MobileSidebarContent from "./MobileSidebarContent"
 import { useTheme } from "@emotion/react"
 import BurgerButton from "./BurgerButton"
