@@ -1,10 +1,14 @@
 import { Box } from "@mui/system"
 import { Typography, Stack } from "@mui/material"
 import { useTheme } from "@emotion/react"
+import { createRef, useContext, useEffect } from "react"
+import { AppContext } from "../../pages"
 
 const MobileSidebarContent = () => {
 
     const theme = useTheme()
+
+    const {scrollOnClick, refs: { about: {aboutRef}}} = useContext(AppContext)
 
     return (
         <Box sx={{
@@ -21,7 +25,7 @@ const MobileSidebarContent = () => {
                     display: 'block'
                 }
             }}}>
-                <Typography>
+                <Typography onClick={() => scrollOnClick(aboutRef)}>
                     <Box component="span">01.</Box> About
                 </Typography>
                 <Typography>

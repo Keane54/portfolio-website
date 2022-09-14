@@ -1,12 +1,12 @@
 import { useTheme } from "@emotion/react"
 import { Box } from "@mui/system"
 import { useContext } from "react"
-import { MenuStatus } from "../../pages"
+import { AppContext } from "../../pages"
 
 const BurgerButton = () => {
     const theme = useTheme()
 
-    const {open, setOpen} = useContext(MenuStatus)
+    const {open, setOpen} = useContext(AppContext)
 
     return (
         <Box onClick={() => setOpen(!open)} sx={{

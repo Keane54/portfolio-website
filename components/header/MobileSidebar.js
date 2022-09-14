@@ -1,13 +1,13 @@
 import { Box } from "@mui/system"
 import { ClickAwayListener } from "@mui/material"
 import { useContext } from "react"
-import { MenuStatus } from "../../pages"
+import { AppContext } from "../../pages"
 import MobileSidebarContent from "./MobileSidebarContent"
 import BurgerButton from "./BurgerButton"
 
 const MobileSidebar = () => {
 
-    const {open, setOpen} = useContext(MenuStatus)
+    const {open, setOpen} = useContext(AppContext)
 
     return (
         <ClickAwayListener onClickAway={() => open === true ? setOpen(!open) : null}>

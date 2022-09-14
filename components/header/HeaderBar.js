@@ -5,7 +5,7 @@ import { keyframes } from '@emotion/react'
 import DesktopMenu from './DesktopMenu';
 import MobileSidebar from './MobileSidebar';
 import { useContext } from 'react';
-import { MenuStatus } from '../../pages';
+import { AppContext } from '../../pages';
 
 const squidWiggle = keyframes`
 0% {
@@ -30,7 +30,7 @@ const squidWiggle = keyframes`
 
 const HeaderBar = ( { theme } ) => {
     
-    const {isDesktop} = useContext(MenuStatus)
+    const {isDesktop} = useContext(AppContext)
 
     return (
         <AppBar elevation={0} sx={{background: 'white', color:'black', position: 'static'}}>

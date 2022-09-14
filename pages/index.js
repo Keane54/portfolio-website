@@ -1,26 +1,30 @@
 import { Button, Typography, useMediaQuery } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
-import { createContext, useEffect, useState } from 'react';
-import AboutHeader from '../components/about-me/AboutHeader';
+import { createContext, createRef, useEffect, useState } from 'react';
+import AboutHeading from '../components/about-me/AboutHeading';
 import Blurb from '../components/about-me/Blurb';
 import DisplayGreeting from '../components/DisplayGreeting';
 import FixedWidgets from '../components/FixedWidgets';
 import HeaderBar from '../components/header/HeaderBar';
 import MyPhoto from '../components/about-me/MyPhoto';
 
-export const MenuStatus = createContext()
+export const AppContext = createContext()
 
 export default function Home() {
   const theme = useTheme()
-
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'))
 
   const [open, setOpen] = useState(false)
+  const [aboutRef, setAboutRef] = useState()
 
   useEffect(() => {
     if (isDesktop && open) setOpen(false) 
   }, [isDesktop, open])
+
+  const scrollOnClick = (ref) => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <>
@@ -31,7 +35,19 @@ export default function Home() {
       </Head>
 
       
-      <MenuStatus.Provider value={{open: open, setOpen: setOpen, isDesktop: isDesktop}}>
+      <AppContext.Provider 
+        value={{
+          open: open, 
+          setOpen: setOpen, 
+          isDesktop: isDesktop, 
+          scrollOnClick: scrollOnClick,
+          refs: {
+            about: {
+              aboutRef: aboutRef,
+              setAboutRef: setAboutRef
+            }
+          }}}>
+
         <HeaderBar theme={theme}/>
 
         <Container maxWidth={'lg'} 
@@ -83,7 +99,7 @@ export default function Home() {
           <Container disableGutters sx={{mt: 16}}>
             <Box>
 
-              <AboutHeader theme={theme} isDesktop={isDesktop}/>
+              <AboutHeading theme={theme} isDesktop={isDesktop}/>
 
               <Box sx={{
                 display: 'flex', 
@@ -103,7 +119,7 @@ export default function Home() {
           <FixedWidgets theme={theme}/>
 
         </Container>
-      </MenuStatus.Provider>
+      </AppContext.Provider>
 
     </>
   )
