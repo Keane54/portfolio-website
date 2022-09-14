@@ -1,13 +1,15 @@
 import { Button, Typography, useMediaQuery } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
-import { createContext, createRef, useEffect, useState } from 'react';
-import AboutHeading from '../components/about-me/AboutHeading';
+import { createContext, useEffect, useState } from 'react';
+import SectionHeading from '../components/SectionHeading';
 import Blurb from '../components/about-me/Blurb';
 import DisplayGreeting from '../components/DisplayGreeting';
 import FixedWidgets from '../components/FixedWidgets';
 import HeaderBar from '../components/header/HeaderBar';
 import MyPhoto from '../components/about-me/MyPhoto';
+import Featured from '../components/my-work/Featured';
+import { projects } from '../src/projects';
 
 export const AppContext = createContext()
 
@@ -101,7 +103,7 @@ export default function Home() {
           <Container disableGutters sx={{mt: 16}}>
             <Box>
 
-              <AboutHeading theme={theme}/>
+              <SectionHeading text={"About Me"}/>
 
               <Box sx={{
                 display: 'flex', 
@@ -118,8 +120,22 @@ export default function Home() {
             </Box>
           </Container>
 
-          <FixedWidgets theme={theme}/>
+          <Container sx={{mt: isDesktop ? 25 : 15}}>
+            <Container>
+              <SectionHeading text={"My Projects"}/>
+              
+              {
+                projects.map((project, index) => {
+                  const imgLeft = index % 2 === 0 ? true : false
 
+                  return <Featured props={project} imgLeft={imgLeft} key={index}/>
+                })
+              }
+
+            </Container>
+          </Container>
+
+          <FixedWidgets theme={theme}/>
         </Container>
       </AppContext.Provider>
 
