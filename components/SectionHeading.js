@@ -3,20 +3,23 @@ import { AppContext } from "/pages"
 import { useContext, useEffect, useRef } from "react"
 import { useTheme } from "@emotion/react"
 
-const SectionHeading = ({ text }) => {
+const SectionHeading = ({ text, sectionNum }) => {
   
-  const {isDesktop, refs: {about: {aboutRef, setAboutRef}}} = useContext(AppContext)
+  const {isDesktop, refs, setRefs} = useContext(AppContext)
 
-  const aboutHeading = useRef();
+  const sectionRef = useRef();
 
   useEffect(() => {
-    setAboutRef(aboutHeading)
-  }, [setAboutRef])
+    setRefs(prevRefs => ({
+      ...prevRefs,
+      [sectionNum]: sectionRef
+    }))
+  }, [setRefs, sectionNum])
 
   const theme = useTheme()
 
   return (
-      <Typography ref={aboutRef} sx={{
+      <Typography ref={sectionRef} sx={{
           fontSize: 22, 
           display: 'flex',
           alignItems: 'center',
@@ -32,7 +35,7 @@ const SectionHeading = ({ text }) => {
             flex: isDesktop ? 'initial' : 1
           }
         }}>
-          <Box className='highlightedText' component="span">01.</Box> {text}
+          <Box className='highlightedText' component="span">{sectionNum}.</Box> {text}
         </Typography>
   )
 }

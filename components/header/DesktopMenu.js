@@ -4,14 +4,14 @@ import { AppContext } from "../../pages"
 
 const DesktopMenu = () => {
 
-    const { scrollOnClick, refs: { about: { aboutRef } } } = useContext(AppContext)
+    const { scrollOnClick, refs, setRefs} = useContext(AppContext)
 
     return (
         <>
-            <Typography onClick={() => {scrollOnClick(aboutRef)}}>
+            <Typography onClick={() => {scrollOnClick(refs['01'])}}>
                 <Box component="span">01.</Box> About
             </Typography>
-            <Typography>
+            <Typography onClick={() => {scrollOnClick(refs['02'])}}>
                 <Box component="span">02.</Box> Work
             </Typography>
             <Typography>

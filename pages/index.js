@@ -18,7 +18,7 @@ export default function Home() {
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'))
 
   const [open, setOpen] = useState(false)
-  const [aboutRef, setAboutRef] = useState()
+  const [refs, setRefs] = useState({})
 
   useEffect(() => {
     if (isDesktop && open) setOpen(false) 
@@ -45,12 +45,9 @@ export default function Home() {
           setOpen: setOpen, 
           isDesktop: isDesktop, 
           scrollOnClick: scrollOnClick,
-          refs: {
-            about: {
-              aboutRef: aboutRef,
-              setAboutRef: setAboutRef
-            }
-          }}}>
+          refs: refs,
+          setRefs: setRefs
+          }}>
 
         <HeaderBar theme={theme}/>
 
@@ -103,7 +100,7 @@ export default function Home() {
           <Container disableGutters sx={{mt: 16}}>
             <Box>
 
-              <SectionHeading text={"About Me"}/>
+              <SectionHeading text={"About Me"} sectionNum={'01'}/>
 
               <Box sx={{
                 display: 'flex', 
@@ -122,7 +119,7 @@ export default function Home() {
 
           <Container sx={{mt: isDesktop ? 25 : 15}}>
             <Container>
-              <SectionHeading text={"My Projects"}/>
+              <SectionHeading text={"My Projects"} sectionNum={'02'}/>
               
               {
                 projects.map((project, index) => {
