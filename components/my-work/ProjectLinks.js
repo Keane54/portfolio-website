@@ -8,11 +8,10 @@ const ProjectLinks = ( { links, imgLeft }) => {
         <Box sx={{
             display: 'flex', 
             justifyContent: imgLeft ? 'flex-end' : 'flex-start',
-            gap: 2,
+            gap: 2.5,
             '& a': {
                 display: 'block',
                 textDecoration: 'none',
-                color: theme.palette.primary.main
             }
         }}>
 
@@ -30,9 +29,15 @@ const ProjectLinks = ( { links, imgLeft }) => {
                             <Box sx={{
                                 mask: `url(${widget}) no-repeat center`,
                                 backgroundColor: theme.palette.primary.main,
+                                maskSize: 'contain',
+                                transition: 'all 200ms ease-in-out',
+                                '&:hover': {
+                                    backgroundColor: theme.palette.primary.light,
+                                    transform: 'scale(1.12)'
+                                }
                             }} key={url}>
                                 <a href={url} target="_blank" rel="noreferrer"
-                                style={{height: '32px', width: '32px', display: 'block'}}></a>
+                                style={{height: '24px', width: '24px', display: 'block'}}></a>
                             </Box>
                         )
                     })
