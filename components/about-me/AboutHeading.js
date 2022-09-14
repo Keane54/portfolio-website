@@ -2,10 +2,9 @@ import { Typography, Box } from "@mui/material"
 import { AppContext } from "../../pages"
 import { useContext, useEffect, useRef } from "react"
 
-const AboutHeading = ({ theme, isDesktop}) => {
-
-
-  const {refs: {about: {aboutRef, setAboutRef}}} = useContext(AppContext)
+const AboutHeading = ({ theme }) => {
+  
+  const {isDesktop, refs: {about: {aboutRef, setAboutRef}}} = useContext(AppContext)
 
   const aboutHeading = useRef();
 

@@ -24,6 +24,8 @@ export default function Home() {
 
   const scrollOnClick = (ref) => {
     ref?.current?.scrollIntoView({ behavior: "smooth" })
+
+    if (open) setOpen(false)
   }
 
   return (
@@ -99,19 +101,19 @@ export default function Home() {
           <Container disableGutters sx={{mt: 16}}>
             <Box>
 
-              <AboutHeading theme={theme} isDesktop={isDesktop}/>
+              <AboutHeading theme={theme}/>
 
               <Box sx={{
                 display: 'flex', 
                 position: 'relative',
-                flexDirection: isDesktop ? 'row' : 'column'
+                flexDirection: isDesktop ? 'row' : 'column',
+                gap: isDesktop ? 2 : 4
               }}>
 
                 <Blurb isDesktop={isDesktop}/>
                 <MyPhoto isDesktop={isDesktop}/>
                 
               </Box>
-
 
             </Box>
           </Container>
