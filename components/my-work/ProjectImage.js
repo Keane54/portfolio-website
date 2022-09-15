@@ -4,7 +4,7 @@ import { Box } from "@mui/system"
 const ProjectImage = ({ src, imgLeft }) => {
     return (
         <Box sx={{
-            gridColumn: imgLeft ? '1 / 8' : '5 / 12',
+            gridColumn: imgLeft ? '1 / 8' : '6 / 13',
             gridRow: '1 / 2',
             overflow: 'hidden',
             display: 'flex',

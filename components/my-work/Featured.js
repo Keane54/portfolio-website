@@ -26,7 +26,7 @@ const Featured = ( { props, imgLeft }) => {
             <ProjectImage src={img} imgLeft={imgLeft} />
 
             <Box sx={{
-                gridColumn: imgLeft ? '6 / -1' : '1 / 7',
+                gridColumn: imgLeft ? '6 / -1' : '1 / 8',
                 gridRow: '1 / 2',
                 textAlign: imgLeft ? 'right' : 'left'
             }}>

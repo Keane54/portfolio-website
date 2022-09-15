@@ -4,9 +4,10 @@ export const projects = [
         href: '',
         desc: `The Kineko team needed a page for users to view all
         the features & benefits of their product, so working
-        with them I designed a page to showcase their platform.`,
+        with them I designed a page to showcase their platform in a
+        fully responsive format.`,
         technologies: ['HTML', 'CSS'],
-        img: '/kineko.png',
+        img: '/kineko.webp',
         links: {
             github: {
                 widget: '/githubmark.svg',
@@ -23,9 +24,10 @@ export const projects = [
         href: '',
         desc: `The Kineko team needed a page for users to view all
         the features & benefits of their product, so working
-        with them I designed a page to showcase their platform.`,
+        with them I designed a page to showcase their platform in a
+        fully responsive format.`,
         technologies: ['HTML', 'CSS'],
-        img: '/kineko.png',
+        img: '/kineko.webp',
         links: {
             github: {
                 widget: '/githubmark.svg',
