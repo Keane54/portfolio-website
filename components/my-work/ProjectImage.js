@@ -4,23 +4,22 @@ import { Box } from "@mui/system"
 const ProjectImage = ({ src, imgLeft }) => {
     return (
         <Box sx={{
-            gridColumn: imgLeft ? '1 / 7' : '6 / 12',
+            gridColumn: imgLeft ? '1 / 8' : '5 / 12',
             gridRow: '1 / 2',
-            borderRadius: '5px',
             overflow: 'hidden',
-            display: 'block',
+            display: 'flex',
             position: 'relative',
             zIndex: '-1',
+            height: '100%',
+            alignItems: 'center',
             '& img': {
                 objectFit: 'cover',
-                height: '100%',
-                position: 'absolute',
-                width: '100%'
+                maxWidth: '100%',
+                borderRadius: '5px',
+                display: 'block'
             }
         }}>
-            <Box>
-                <img src={src} alt=""/>
-            </Box>
+            <img src={src} alt=""/>
         </Box>
     )
 }

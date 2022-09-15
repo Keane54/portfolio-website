@@ -7,21 +7,16 @@ export const projects = [
         with them I designed a page to showcase their platform.`,
         technologies: ['HTML', 'CSS'],
         img: '/kineko.png',
-        links: [
-            {
-                github: {
-                    widget: '/githubmark.svg',
-                    url: 'https://github.com/Keane54/Kineko-Splashpage',
-                }
-            }, 
-            {
-                website: {
-                    widget: '/external.svg',
-                    url: 'https://peaceful-swartz-b5c1a8.netlify.app',
-
-                }
+        links: {
+            github: {
+                widget: '/githubmark.svg',
+                url: 'https://github.com/Keane54/Kineko-Splashpage',
+            },
+            website: {
+                widget: '/external.svg',
+                url: 'https://peaceful-swartz-b5c1a8.netlify.app',
             }
-        ]
+        }
     },
     {
         title: 'Kineko One-Pager',
@@ -31,20 +26,15 @@ export const projects = [
         with them I designed a page to showcase their platform.`,
         technologies: ['HTML', 'CSS'],
         img: '/kineko.png',
-        links: [
-            {
-                github: {
-                    widget: '/githubmark.svg',
-                    url: 'https://github.com/Keane54/Kineko-Splashpage',
-                }
-            }, 
-            {
-                website: {
-                    widget: '/external.svg',
-                    url: 'https://peaceful-swartz-b5c1a8.netlify.app',
-
-                }
+        links: {
+            github: {
+                widget: '/githubmark.svg',
+                url: 'https://github.com/Keane54/Kineko-Splashpage',
+            },
+            website: {
+                widget: '/external.svg',
+                url: 'https://peaceful-swartz-b5c1a8.netlify.app',
             }
-        ]
+        }
     }
 ]

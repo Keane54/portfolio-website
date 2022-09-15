@@ -18,14 +18,15 @@ const Featured = ( { props, imgLeft }) => {
             gridTemplateColumns: 'repeat(12, 1fr)',
             position: 'relative', 
             width: '100%',
-            justifyContent: "flex-end",
-            mb: 20
+            height: 'fit-content',
+            mb: 20,
+            alignItems: 'center'
         }}>
 
             <ProjectImage src={img} imgLeft={imgLeft} />
 
             <Box sx={{
-                gridColumn: imgLeft ? '6 / 12' : '1 / 7',
+                gridColumn: imgLeft ? '6 / -1' : '1 / 7',
                 gridRow: '1 / 2',
                 textAlign: imgLeft ? 'right' : 'left'
             }}>
