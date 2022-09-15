@@ -23,12 +23,12 @@ const Featured = ( { props, imgLeft }) => {
             alignItems: 'center'
         }}>
 
-            <ProjectImage src={img} imgLeft={imgLeft} />
+            <ProjectImage src={img} href={links.website.url} imgLeft={imgLeft} />
 
             <Box sx={{
                 gridColumn: imgLeft ? '6 / -1' : '1 / 8',
                 gridRow: '1 / 2',
-                textAlign: imgLeft ? 'right' : 'left'
+                textAlign: imgLeft ? 'right' : 'left',
             }}>
                 <Box>
                     <Typography sx={{color: '#7e7e7e', fontSize: 18}}>

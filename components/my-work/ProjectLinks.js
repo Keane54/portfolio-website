@@ -29,6 +29,7 @@ const ProjectLinks = ( { links, imgLeft }) => {
                             backgroundColor: theme.palette.primary.main,
                             maskSize: 'contain',
                             transition: 'all 200ms ease-in-out',
+                            position: 'relative',
                             '&:hover': {
                                 backgroundColor: theme.palette.primary.light,
                                 transform: 'scale(1.12)'
