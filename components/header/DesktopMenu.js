@@ -4,7 +4,7 @@ import { AppContext } from "../../pages"
 
 const DesktopMenu = () => {
 
-    const { scrollOnClick, refs, setRefs} = useContext(AppContext)
+    const { scrollOnClick, refs} = useContext(AppContext)
 
     return (
         <>

@@ -18,7 +18,7 @@ const ProjectTitle = ( { projectTitle, href } ) => {
                 display: 'inline-block',
                 '&:hover': {
                     transform: 'scale(1.05)',
-                    color: theme.palette.primary.light
+                    color: theme.palette.secondary.main
                 }
             }
         }}>

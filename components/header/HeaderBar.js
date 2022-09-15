@@ -67,12 +67,15 @@ const HeaderBar = ( { theme } ) => {
                         transition: 'all 200ms ease-in-out',
                         '&:hover': {
                             cursor: 'pointer',
-                            color: theme.palette.primary.main,
+                            color: theme.palette.secondary.main,
                             transform: 'scale(1.05)',
+                            '& .MuiBox-root': {
+                                color: theme.palette.secondary.main,
+                            }
                         },
                         "& .MuiBox-root": {
                             color: theme.palette.primary.main,
-                            transition: 'all 200ms ease-in-out',
+                            transition: 'all 200ms ease-in-out'
                         }
                     }
                 }}>

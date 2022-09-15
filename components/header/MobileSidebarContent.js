@@ -8,7 +8,7 @@ const MobileSidebarContent = () => {
 
     const theme = useTheme()
 
-    const {scrollOnClick, refs, setRefs} = useContext(AppContext)
+    const {scrollOnClick, refs} = useContext(AppContext)
 
     return (
         <Box sx={{
@@ -46,6 +46,7 @@ const MobileSidebarContent = () => {
                     transition: 'all 200ms ease-in-out'
                 }, '& .iconWidget:hover': {
                     transform: 'scale(1.15) translateY(-2px)',
+                    backgroundColor: theme.palette.secondary.main
                 }, '& > .emailAddress': {
                     fontSize: 16,
                     cursor: 'pointer',

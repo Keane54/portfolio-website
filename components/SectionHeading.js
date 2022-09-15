@@ -28,7 +28,7 @@ const SectionHeading = ({ text, sectionNum }) => {
           mb: 2,
           '&::after': {
             content: '""',
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.secondary.main,
             width: '15vw',
             height: '1px',
             display: 'block',

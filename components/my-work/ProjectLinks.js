@@ -31,7 +31,7 @@ const ProjectLinks = ( { links, imgLeft }) => {
                             transition: 'all 200ms ease-in-out',
                             position: 'relative',
                             '&:hover': {
-                                backgroundColor: theme.palette.primary.light,
+                                backgroundColor: theme.palette.secondary.main,
                                 transform: 'scale(1.12)'
                             }
                         }} key={url}>

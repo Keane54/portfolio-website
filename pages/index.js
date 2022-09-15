@@ -123,9 +123,8 @@ export default function Home() {
               
               {
                 projects.map((project, index) => {
-                  const imgLeft = index % 2 === 0 ? true : false
-
-                  return <Featured props={project} imgLeft={imgLeft} key={index}/>
+                  // We see if the remainder of the current index is 0 to alternate project images left/right.
+                  return <Featured props={project} imgLeft={index % 2 === 0 ? true : false} key={index}/>
                 })
               }
 
