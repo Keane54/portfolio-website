@@ -117,8 +117,9 @@ export default function Home() {
             </Box>
           </Container>
 
-          <Container sx={{mt: isDesktop ? 25 : 15}}>
-            <Container>
+          {/* disableGutters needs to check opposite of isDesktop */}
+          <Container disableGutters={!isDesktop} sx={{mt: isDesktop ? 25 : 15}}>
+            <Container disableGutters={!isDesktop}>
               <SectionHeading text={"My Projects"} sectionNum={'02'}/>
               
               {

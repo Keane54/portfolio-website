@@ -8,11 +8,16 @@ const Technologies = ({ technologies, imgLeft }) => {
             gap: 2, 
             color: '#7e7e7e', 
             justifyContent: imgLeft ? 'flex-end' : 'flex-start',
-            mb: 2
+            mb: 2,
+            '@media (max-width: 900px)': {
+                justifyContent: 'flex-start',
+                color: 'white',
+                fontWeight: 500
+            }
         }}>
                 {technologies.map(tech => {
                     return (
-                        <Typography key={tech}>
+                        <Typography sx={{fontWeight: 400}} key={tech}>
                             {tech}
                         </Typography>
                     )

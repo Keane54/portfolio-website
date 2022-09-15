@@ -11,6 +11,9 @@ const ProjectLinks = ( { links, imgLeft }) => {
             display: 'flex', 
             justifyContent: imgLeft ? 'flex-end' : 'flex-start',
             gap: 2.5,
+            '@media (max-width: 900px)': {
+                justifyContent: 'flex-start'
+            },
             '& a': {
                 display: 'block',
                 textDecoration: 'none',
@@ -32,7 +35,10 @@ const ProjectLinks = ( { links, imgLeft }) => {
                             position: 'relative',
                             '&:hover': {
                                 backgroundColor: theme.palette.secondary.main,
-                                transform: 'scale(1.12)'
+                                transform: 'scale(1.12)',
+                                '@media (max-width: 900px)': {
+                                    backgroundColor: theme.palette.secondary.light,
+                                }
                             }
                         }} key={url}>
                             <a href={url} target="_blank" rel="noreferrer"

@@ -10,6 +10,9 @@ const ProjectTitle = ( { projectTitle, href } ) => {
             fontSize: 28,
             fontWeight: 500,
             mb: 1.8,
+            '@media (max-width: 900px)': {
+                mb: 1.2
+            },
             '& a': {
                 textDecoration: 'none',
                 cursor: 'pointer',
@@ -19,6 +22,13 @@ const ProjectTitle = ( { projectTitle, href } ) => {
                 '&:hover': {
                     transform: 'scale(1.05)',
                     color: theme.palette.secondary.main
+                },
+                '@media (max-width: 900px)': {
+                    width: '100%',
+                    '&:hover': {
+                        transform: 'none',
+                        color: theme.palette.secondary.light
+                    }
                 }
             }
         }}>

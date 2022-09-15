@@ -10,6 +10,8 @@ import Technologies from "./Technologies"
 
 const Featured = ( { props, imgLeft }) => {
 
+    const theme = useTheme()
+
     const {title, href, desc, technologies, img, links} = props
 
     return (
@@ -20,7 +22,10 @@ const Featured = ( { props, imgLeft }) => {
             width: '100%',
             height: 'fit-content',
             mb: 20,
-            alignItems: 'center'
+            alignItems: 'center',
+            '@media (max-width: 900px)': {
+                py: 5
+            }
         }}>
 
             <ProjectImage src={img} href={links.website.url} imgLeft={imgLeft} />
@@ -29,9 +34,25 @@ const Featured = ( { props, imgLeft }) => {
                 gridColumn: imgLeft ? '6 / -1' : '1 / 8',
                 gridRow: '1 / 2',
                 textAlign: imgLeft ? 'right' : 'left',
+                '@media (max-width: 900px)': {
+                    gridColumn: '2 / 11',
+                    position: 'relative',
+                    textAlign: 'left',
+                    pointerEvents: 'none',
+                    py: 3
+                }
             }}>
-                <Box>
-                    <Typography sx={{color: '#7e7e7e', fontSize: 18}}>
+                <Box sx={{'@media (max-width: 900px)': {
+                        pointerEvents: 'auto'
+                    }}}>
+                    <Typography sx={{
+                        color: '#7e7e7e', 
+                        fontSize: 18,
+                        '@media (max-width: 900px)': {
+                            fontWeight: 400,
+                            color: 'white'
+                        }
+                    }}>
                         Featured Project
                     </Typography>
                     <ProjectTitle projectTitle={title} href={href}/>

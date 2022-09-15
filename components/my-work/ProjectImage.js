@@ -16,6 +16,12 @@ const ProjectImage = ({ src, href, imgLeft }) => {
             borderRadius: '5px',
             alignItems: 'center',
             cursor: 'pointer',
+            '@media (max-width: 900px)': {
+                gridColumn: '1 / -1',
+                height: '100%',
+                backgroundColor: '#232323',
+                cursor: 'pointer'
+            },
             '& img': {
                 objectFit: 'cover',
                 maxWidth: '100%',
@@ -26,7 +32,22 @@ const ProjectImage = ({ src, href, imgLeft }) => {
                 '&:hover': {
                     opacity: 0.9,
                     transform: 'scale(1.025)'
+                },
+                '@media (max-width: 900px)': {
+                    opacity: 0.25,
+                    height: '100%',
+                    width: 'auto',
+                    filter: 'grayscale(100%) contrast(1) brightness(20%)',
+                    '&:hover': {
+                        opacity: 0.5,
+                        transform: 'scale(1.05)',
+                        filter: 'grayscale(0%) contrast(1) brightness(20%)'
+                    }
                 }
+            },
+            '& a': {
+                width: '100%',
+                height: '100%'
             }
         }}>
             <a href={href} target="_blank" rel="noreferrer">
