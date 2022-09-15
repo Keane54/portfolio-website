@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTheme } from "@emotion/react"
-import { Typography } from "@mui/material"
+import { Typography, useMediaQuery } from "@mui/material"
 import { Box } from "@mui/system"
 import ProjectDesc from "./ProjectDesc"
 import ProjectImage from "./ProjectImage"
@@ -14,23 +14,20 @@ const Featured = ( { props, imgLeft }) => {
 
     return (
         <Box sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
             position: 'relative', 
             width: '100%',
-            display: imgLeft ? 'block' : 'flex',
             justifyContent: "flex-end",
             mb: 20
         }}>
 
-            <ProjectImage src={img} />
+            <ProjectImage src={img} imgLeft={imgLeft} />
 
             <Box sx={{
-                position: 'absolute', 
-                right: imgLeft ? '0px' : '100%', 
-                top: 0,
-                textAlign: imgLeft ? 'right' : 'left',
-                width: '40vw',
-                top: '50%',
-                transform: imgLeft ? 'translateY(-50%)' : 'translateY(-50%) translateX(100%)'
+                gridColumn: imgLeft ? '6 / 12' : '1 / 7',
+                gridRow: '1 / 2',
+                textAlign: imgLeft ? 'right' : 'left'
             }}>
                 <Box>
                     <Typography sx={{color: '#7e7e7e', fontSize: 18}}>

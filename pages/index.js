@@ -25,7 +25,7 @@ export default function Home() {
   }, [isDesktop, open])
 
   const scrollOnClick = (ref) => {
-    ref?.current?.scrollIntoView({ behavior: "smooth" })
+    ref?.current?.scrollIntoView({ behavior: "smooth"})
 
     if (open) setOpen(false)
   }

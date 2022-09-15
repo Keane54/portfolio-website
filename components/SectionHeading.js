@@ -5,7 +5,7 @@ import { useTheme } from "@emotion/react"
 
 const SectionHeading = ({ text, sectionNum }) => {
   
-  const {isDesktop, refs, setRefs} = useContext(AppContext)
+  const {isDesktop, setRefs} = useContext(AppContext)
 
   const sectionRef = useRef();
 
