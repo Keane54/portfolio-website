@@ -11,6 +11,7 @@ import MyPhoto from '../components/about-me/MyPhoto';
 import Featured from '../components/my-work/Featured';
 import { projects } from '../src/projects';
 import FooterText from '../components/FooterText';
+import { useScrollDirection } from '../components/hooks/useScrollDirection';
 
 export const AppContext = createContext()
 
@@ -27,7 +28,6 @@ export default function Home() {
 
   const scrollOnClick = (ref) => {
     ref?.current?.scrollIntoView({ behavior: "smooth"})
-
     if (open) setOpen(false)
   }
 
@@ -47,7 +47,7 @@ export default function Home() {
             isDesktop: isDesktop, 
             scrollOnClick: scrollOnClick,
             refs: refs,
-            setRefs: setRefs
+            setRefs: setRefs,
             }}>
 
           <HeaderBar theme={theme}/>
@@ -100,7 +100,7 @@ export default function Home() {
               </Button>
             </Box>
 
-            <Container disableGutters sx={{mt: 16}}>
+            <Container disableGutters sx={{mt: isDesktop ? 10 : 3}}>
               <Box>
 
                 <SectionHeading text={"About Me"} sectionNum={'01'}/>
@@ -123,7 +123,7 @@ export default function Home() {
             {/* disableGutters needs to check opposite of isDesktop */}
             <Container disableGutters={!isDesktop} 
             sx={{
-              mt: isDesktop ? 25 : 15,
+              mt: isDesktop ? 10 : 3,
               '& .projectBox:first-of-type': {
                 mt: 3
               }
@@ -141,7 +141,7 @@ export default function Home() {
                 <Container disableGutters={!isDesktop} 
                 sx={{
                   mb: 12, 
-                  mt: isDesktop ? 25 : 15
+                  mt: isDesktop ? 12 : 3
                 }}>
                   <Container disableGutters={!isDesktop}>
 

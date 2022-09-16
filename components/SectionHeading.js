@@ -26,6 +26,7 @@ const SectionHeading = ({ text, sectionNum }) => {
           gap: isDesktop ? 1.25 : 2,
           width: isDesktop ? 'fit-content': '100%',
           mb: 2,
+          pt: 10,
           '&::after': {
             content: '""',
             backgroundColor: theme.palette.secondary.main,

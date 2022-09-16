@@ -18,11 +18,9 @@ const Featured = ( { props, imgLeft }) => {
             position: 'relative', 
             width: '100%',
             height: 'fit-content',
-            mb: 20,
             alignItems: 'center',
             '@media (max-width: 900px)': {
                 mt: 2,
-                mb: 7,
                 boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
                 borderRadius: '5px'
             }
