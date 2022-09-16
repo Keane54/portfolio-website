@@ -10,6 +10,7 @@ import HeaderBar from '../components/header/HeaderBar';
 import MyPhoto from '../components/about-me/MyPhoto';
 import Featured from '../components/my-work/Featured';
 import { projects } from '../src/projects';
+import FooterText from '../components/FooterText';
 
 export const AppContext = createContext()
 
@@ -55,7 +56,8 @@ export default function Home() {
           sx={{
             filter: open ? 'blur(6px)' : 'none',
             transition: 'filter 200ms ease-in-out',
-            my: 6, 
+            mt: 6, 
+            mb: 2,
             '& .highlightedText': {
               color: theme.palette.primary.main, 
               fontWeight: 500
@@ -129,7 +131,7 @@ export default function Home() {
                 })
               }
 
-              <Container disableGutters={!isDesktop}>
+              <Container disableGutters={!isDesktop} sx={{mb: 12}}>
                 <Container disableGutters={!isDesktop}>
 
                     <SectionHeading sectionNum={'03'} text={"What's next?"}/>
@@ -145,7 +147,7 @@ export default function Home() {
                         width: isDesktop ? '50vw' : '80vw',
                         
                       }}>
-                        I&apos;m currently open to new opportunities, and my inbox is always open.
+                        I&apos;m currently interested in new opportunities, and my inbox is always open.
                         If you have any questions or even just want to say hello, send me an email
                         or message me on LinkedIn and I&apos;ll do my best to reply!
                       </Typography>
@@ -155,9 +157,15 @@ export default function Home() {
                         py: 1.2,
                         px: 5.5,
                         fontSize: 24,
-                        textTransform: 'none'
+                        textTransform: 'none',
+                        '& a': {
+                          textDecoration: 'none',
+                          color: 'inherit'
+                        }
                       }}>
-                        Say Hello
+                        <a href="mailto:ollyfudgey5@gmail.com" target="_blank" rel="noreferrer">
+                          Say Hello
+                        </a>
                       </Button>
                     </Stack>
 
@@ -166,6 +174,8 @@ export default function Home() {
 
             </Container>
           </Container>
+
+          <FooterText/>
 
           <FixedWidgets theme={theme}/>
         </Container>
