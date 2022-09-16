@@ -40,6 +40,7 @@ const HeaderBar = ( { theme } ) => {
             background: 'white', 
             color:'black', 
             position: 'sticky', 
+            top: 0,
             transition: 'transform 250ms ease-in-out',
             transform: scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)',
         }}>
