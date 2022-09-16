@@ -42,7 +42,7 @@ const HeaderBar = ( { theme } ) => {
             position: 'sticky', 
             transition: 'transform 250ms ease-in-out',
             transform: scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)',
-            overflowX: 'hidden'
+            overflowY: 'visible'
         }}>
             <Container sx={{
                 '@media (max-width: 1280px) and (min-width: 900px)': {

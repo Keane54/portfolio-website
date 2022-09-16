@@ -39,149 +39,149 @@ export default function Home() {
         <link rel="icon" href="squidlogo.svg" />
       </Head>
 
-      
-      <AppContext.Provider 
-        value={{
-          open: open, 
-          setOpen: setOpen, 
-          isDesktop: isDesktop, 
-          scrollOnClick: scrollOnClick,
-          refs: refs,
-          setRefs: setRefs
-          }}>
-
-        <HeaderBar theme={theme}/>
-
-        <Container maxWidth={'lg'} 
-          sx={{
-            filter: open ? 'blur(6px)' : 'none',
-            transition: 'filter 200ms ease-in-out',
-            mt: 6, 
-            mb: 2,
-            overflow: 'hidden',
-            '& .highlightedText': {
-              color: theme.palette.primary.main, 
-              fontWeight: 500
-            }, '@media (max-width: 1280px) and (min-width: 900px)': {
-              px: 12
-            }
-          }}>
-
-          <Box>
-            <Typography fontSize={70} lineHeight={1.1}>
-              Good
-              <DisplayGreeting/>
-              - I&apos;m <Box className='highlightedText' component='span'>Oliver</Box>
-            </Typography>
-            <Typography sx={{fontSize: 40}}>
-              <Box className='highlightedText' component='span'>Front End Developer </Box>
-              &amp;
-              <Box className='highlightedText' component='span'> Blockchain Enthusiast</Box>
-            </Typography>
-
-            <Typography sx={{maxWidth: '520px', fontSize: 22, mt: 2.2}}>
-              I&apos;m a developer specialising in
-              <Box className='highlightedText' component='span'> NextJS </Box> 
-              &amp; 
-              <Box className='highlightedText' component='span'> React</Box>
-              , and enjoy working with communities and likeminded people to build tools for everyday users.
-            </Typography>
-
-            <Button onClick={() => scrollOnClick(refs['02'])} sx={{
-              mt: 3.8,
-              textTransform: 'none', 
-              border: `solid 2px ${theme.palette.primary.main}`,
-              fontSize: 22,
-              px: 5,
-              py: 1.75,
-              borderRadius: 2
+      <Box sx={{overflow: 'hidden'}}>
+        <AppContext.Provider 
+          value={{
+            open: open, 
+            setOpen: setOpen, 
+            isDesktop: isDesktop, 
+            scrollOnClick: scrollOnClick,
+            refs: refs,
+            setRefs: setRefs
             }}>
-              View my work!
-            </Button>
-          </Box>
 
-          <Container disableGutters sx={{mt: 16}}>
-            <Box>
+          <HeaderBar theme={theme}/>
 
-              <SectionHeading text={"About Me"} sectionNum={'01'}/>
-
-              <Box sx={{
-                display: 'flex', 
-                position: 'relative',
-                flexDirection: isDesktop ? 'row' : 'column',
-                gap: isDesktop ? 2 : 4
-              }}>
-
-                <Blurb isDesktop={isDesktop}/>
-                <MyPhoto isDesktop={isDesktop}/>
-                
-              </Box>
-
-            </Box>
-          </Container>
-
-          {/* disableGutters needs to check opposite of isDesktop */}
-          <Container disableGutters={!isDesktop} sx={{mt: isDesktop ? 25 : 15}}>
-            <Container disableGutters={!isDesktop}>
-              <SectionHeading text={"My Projects"} sectionNum={'02'}/>
-              
-              {
-                projects.map((project, index) => {
-                  // We see if the remainder of the current index is 0 to alternate project images left/right.
-                  return <Featured props={project} imgLeft={index % 2 === 0 ? true : false} key={index}/>
-                })
+          <Container maxWidth={'lg'} 
+            sx={{
+              filter: open ? 'blur(6px)' : 'none',
+              transition: 'filter 200ms ease-in-out',
+              mt: 6, 
+              mb: 2,
+              overflow: 'hidden',
+              '& .highlightedText': {
+                color: theme.palette.primary.main, 
+                fontWeight: 500
+              }, '@media (max-width: 1280px) and (min-width: 900px)': {
+                px: 12
               }
+            }}>
 
-              <Container disableGutters={!isDesktop} sx={{mb: 12}}>
-                <Container disableGutters={!isDesktop}>
+            <Box>
+              <Typography fontSize={70} lineHeight={1.1}>
+                Good
+                <DisplayGreeting/>
+                - I&apos;m <Box className='highlightedText' component='span'>Oliver</Box>
+              </Typography>
+              <Typography sx={{fontSize: 40}}>
+                <Box className='highlightedText' component='span'>Front End Developer </Box>
+                &amp;
+                <Box className='highlightedText' component='span'> Blockchain Enthusiast</Box>
+              </Typography>
 
-                    <SectionHeading sectionNum={'03'} text={"What's next?"}/>
+              <Typography sx={{maxWidth: '520px', fontSize: 22, mt: 2.2}}>
+                I&apos;m a developer specialising in
+                <Box className='highlightedText' component='span'> NextJS </Box> 
+                &amp; 
+                <Box className='highlightedText' component='span'> React</Box>
+                , and enjoy working with communities and likeminded people to build tools for everyday users.
+              </Typography>
 
-                    <Stack sx={{alignItems: 'center'}}>
-                      <Typography sx={{fontWeight: 600, fontSize: 50, color: theme.palette.primary.main}}>
-                        Get In Touch
-                      </Typography>
+              <Button onClick={() => scrollOnClick(refs['02'])} sx={{
+                mt: 3.8,
+                textTransform: 'none', 
+                border: `solid 2px ${theme.palette.primary.main}`,
+                fontSize: 22,
+                px: 5,
+                py: 1.75,
+                borderRadius: 2
+              }}>
+                View my work!
+              </Button>
+            </Box>
 
-                      <Typography sx={{
-                        textAlign: 'center', 
-                        mb: 4,
-                        width: isDesktop ? '50vw' : '80vw',
-                        
-                      }}>
-                        I&apos;m currently interested in new opportunities, and my inbox is always open.
-                        If you have any questions or even just want to say hello, send me an email
-                        or message me on LinkedIn and I&apos;ll do my best to reply!
-                      </Typography>
+            <Container disableGutters sx={{mt: 16}}>
+              <Box>
 
-                      <Button sx={{
-                        border: `2px solid ${theme.palette.primary.main}`,
-                        py: 1.2,
-                        px: 5.5,
-                        fontSize: 24,
-                        textTransform: 'none',
-                        '& a': {
-                          textDecoration: 'none',
-                          color: 'inherit'
-                        }
-                      }}>
-                        <a href="mailto:ollyfudgey5@gmail.com" target="_blank" rel="noreferrer">
-                          Say Hello
-                        </a>
-                      </Button>
-                    </Stack>
+                <SectionHeading text={"About Me"} sectionNum={'01'}/>
 
-                </Container>
-              </Container>
+                <Box sx={{
+                  display: 'flex', 
+                  position: 'relative',
+                  flexDirection: isDesktop ? 'row' : 'column',
+                  gap: isDesktop ? 2 : 4
+                }}>
 
+                  <Blurb isDesktop={isDesktop}/>
+                  <MyPhoto isDesktop={isDesktop}/>
+                  
+                </Box>
+
+              </Box>
             </Container>
+
+            {/* disableGutters needs to check opposite of isDesktop */}
+            <Container disableGutters={!isDesktop} sx={{mt: isDesktop ? 25 : 15}}>
+              <Container disableGutters={!isDesktop}>
+                <SectionHeading text={"My Projects"} sectionNum={'02'}/>
+                
+                {
+                  projects.map((project, index) => {
+                    // We see if the remainder of the current index is 0 to alternate project images left/right.
+                    return <Featured props={project} imgLeft={index % 2 === 0 ? true : false} key={index}/>
+                  })
+                }
+
+                <Container disableGutters={!isDesktop} sx={{mb: 12}}>
+                  <Container disableGutters={!isDesktop}>
+
+                      <SectionHeading sectionNum={'03'} text={"What's next?"}/>
+
+                      <Stack sx={{alignItems: 'center'}}>
+                        <Typography sx={{fontWeight: 600, fontSize: 50, color: theme.palette.primary.main}}>
+                          Get In Touch
+                        </Typography>
+
+                        <Typography sx={{
+                          textAlign: 'center', 
+                          mb: 4,
+                          width: isDesktop ? '50vw' : '80vw',
+                          
+                        }}>
+                          I&apos;m currently interested in new opportunities, and my inbox is always open.
+                          If you have any questions or even just want to say hello, send me an email
+                          or message me on LinkedIn and I&apos;ll do my best to reply!
+                        </Typography>
+
+                        <Button sx={{
+                          border: `2px solid ${theme.palette.primary.main}`,
+                          py: 1.2,
+                          px: 5.5,
+                          fontSize: 24,
+                          textTransform: 'none',
+                          '& a': {
+                            textDecoration: 'none',
+                            color: 'inherit'
+                          }
+                        }}>
+                          <a href="mailto:ollyfudgey5@gmail.com" target="_blank" rel="noreferrer">
+                            Say Hello
+                          </a>
+                        </Button>
+                      </Stack>
+
+                  </Container>
+                </Container>
+
+              </Container>
+            </Container>
+
+            <FooterText/>
+
+            <FixedWidgets theme={theme}/>
           </Container>
-
-          <FooterText/>
-
-          <FixedWidgets theme={theme}/>
-        </Container>
-      </AppContext.Provider>
-
+        </AppContext.Provider>
+      </Box>
     </>
   )
 }
