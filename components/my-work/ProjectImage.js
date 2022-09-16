@@ -31,6 +31,7 @@ const ProjectImage = ({ src, href, imgLeft }) => {
             '& img': {
                 objectFit: 'cover',
                 maxWidth: '100%',
+                maxHeight: '100%',
                 borderRadius: '5px',
                 display: 'block',
                 opacity: 0.8,
@@ -42,7 +43,7 @@ const ProjectImage = ({ src, href, imgLeft }) => {
                 '@media (max-width: 900px)': {
                     opacity: 0.2,
                     height: '100%',
-                    width: 'auto',
+                    width: '100%',
                     '&:hover': {
                         opacity: 0.2,
                         transform: 'scale(1.05)',
@@ -54,9 +55,11 @@ const ProjectImage = ({ src, href, imgLeft }) => {
                 height: '100%'
             }
         }}>
-            <a href={href} target="_blank" rel="noreferrer">
-                <img src={src} alt=""/>
-            </a>
+            <Box sx={{height: '100%', width: '100%'}}>
+                <a href={href} target="_blank" rel="noreferrer">
+                    <img src={src} alt="Background image for a completed project."/>
+                </a>
+            </Box>
         </Box>
     )
 }
