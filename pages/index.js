@@ -39,7 +39,7 @@ export default function Home() {
         <link rel="icon" href="squidlogo.svg" />
       </Head>
 
-      <Box sx={{overflow: 'hidden'}}>
+      <Box sx={{overflowX: 'clip'}}>
         <AppContext.Provider 
           value={{
             open: open, 
