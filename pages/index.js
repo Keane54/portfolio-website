@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Oliver - React Developer</title>
+        <title>Oliver Keane - Front End Developer</title>
         <meta name="description" content="Oliver Keane's Portfolio Website" />
         <link rel="icon" href="squidlogo.svg" />
       </Head>

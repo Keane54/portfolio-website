@@ -10,9 +10,7 @@ import Technologies from "./Technologies"
 
 const Featured = ( { props, imgLeft }) => {
 
-    const theme = useTheme()
-
-    const {title, href, desc, technologies, img, links} = props
+    const {title, desc, technologies, img, links} = props
 
     return (
         <Box sx={{
@@ -59,7 +57,7 @@ const Featured = ( { props, imgLeft }) => {
                     }}>
                         Featured Project
                     </Typography>
-                    <ProjectTitle projectTitle={title} href={href}/>
+                    <ProjectTitle projectTitle={title} href={links.website.url}/>
 
                     <ProjectDesc desc={desc}/>
 

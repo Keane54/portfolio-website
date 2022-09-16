@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, useMediaQuery } from '@mui/material'
+import { AppBar, Toolbar } from '@mui/material'
 import { Box, Container } from '@mui/system'
 import Image from 'next/image'
 import { keyframes } from '@emotion/react'
@@ -6,6 +6,7 @@ import DesktopMenu from './DesktopMenu';
 import MobileSidebar from './MobileSidebar';
 import { useContext } from 'react';
 import { AppContext } from '../../pages';
+import { useScrollDirection } from '../hooks/useScrollDirection';
 
 const squidWiggle = keyframes`
 0% {
@@ -32,8 +33,16 @@ const HeaderBar = ( { theme } ) => {
     
     const {isDesktop} = useContext(AppContext)
 
+    const scrollDirection = useScrollDirection()
+
     return (
-        <AppBar elevation={0} sx={{background: 'white', color:'black', position: 'static'}}>
+        <AppBar elevation={0} sx={{
+            background: 'white', 
+            color:'black', 
+            position: 'sticky', 
+            transition: 'transform 250ms ease-in-out',
+            transform: isDesktop && scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)'
+        }}>
             <Container sx={{
                 '@media (max-width: 1280px) and (min-width: 900px)': {
                 px: 12

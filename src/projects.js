@@ -1,7 +1,6 @@
 export const projects = [
     {
         title: 'Kineko One-Pager',
-        href: '',
         desc: `The Kineko team needed a page for users to view all
         the features & benefits of their product, so working
         with them I designed a page to showcase their platform in a

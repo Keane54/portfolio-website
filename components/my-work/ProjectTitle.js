@@ -32,7 +32,7 @@ const ProjectTitle = ( { projectTitle, href } ) => {
                 }
             }
         }}>
-            <a href={href}>{projectTitle}</a>
+            <a href={href} target="_blank" rel="noreferrer">{projectTitle}</a>
         </Typography>
     )
 }
