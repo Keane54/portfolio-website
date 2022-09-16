@@ -31,7 +31,7 @@ const squidWiggle = keyframes`
 
 const HeaderBar = ( { theme } ) => {
     
-    const {isDesktop} = useContext(AppContext)
+    const {isDesktop, open} = useContext(AppContext)
 
     const scrollDirection = useScrollDirection()
 
@@ -42,7 +42,7 @@ const HeaderBar = ( { theme } ) => {
             position: 'fixed', 
             top: 0,
             transition: 'transform 250ms ease-in-out',
-            transform: scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)',
+            transform: scrollDirection === "down" && !open ? 'translateY(-100%)' : 'translateY(0)',
         }}>
             <Container sx={{
                 '@media (max-width: 1280px) and (min-width: 900px)': {

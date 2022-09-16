@@ -56,7 +56,7 @@ export default function Home() {
             sx={{
               filter: open ? 'blur(6px)' : 'none',
               transition: 'filter 200ms ease-in-out',
-              mt: 6, 
+              mt: 10, 
               mb: 2,
               overflow: 'hidden',
               '& .highlightedText': {
