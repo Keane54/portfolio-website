@@ -1,4 +1,4 @@
-import { Button, Typography, useMediaQuery } from '@mui/material';
+import { Button, Stack, Typography, useMediaQuery } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
 import { createContext, useEffect, useState } from 'react';
@@ -55,7 +55,7 @@ export default function Home() {
           sx={{
             filter: open ? 'blur(6px)' : 'none',
             transition: 'filter 200ms ease-in-out',
-            marginTop: 6, 
+            my: 6, 
             '& .highlightedText': {
               color: theme.palette.primary.main, 
               fontWeight: 500
@@ -128,6 +128,41 @@ export default function Home() {
                   return <Featured props={project} imgLeft={index % 2 === 0 ? true : false} key={index}/>
                 })
               }
+
+              <Container disableGutters={!isDesktop}>
+                <Container disableGutters={!isDesktop}>
+
+                    <SectionHeading sectionNum={'03'} text={"What's next?"}/>
+
+                    <Stack sx={{alignItems: 'center'}}>
+                      <Typography sx={{fontWeight: 600, fontSize: 50, color: theme.palette.primary.main}}>
+                        Get In Touch
+                      </Typography>
+
+                      <Typography sx={{
+                        textAlign: 'center', 
+                        mb: 4,
+                        width: isDesktop ? '50vw' : '80vw',
+                        
+                      }}>
+                        I&apos;m currently open to new opportunities, and my inbox is always open.
+                        If you have any questions or even just want to say hello, send me an email
+                        or message me on LinkedIn and I&apos;ll do my best to reply!
+                      </Typography>
+
+                      <Button sx={{
+                        border: `2px solid ${theme.palette.primary.main}`,
+                        py: 1.2,
+                        px: 5.5,
+                        fontSize: 24,
+                        textTransform: 'none'
+                      }}>
+                        Say Hello
+                      </Button>
+                    </Stack>
+
+                </Container>
+              </Container>
 
             </Container>
           </Container>

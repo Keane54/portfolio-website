@@ -14,7 +14,7 @@ const DesktopMenu = () => {
             <Typography onClick={() => {scrollOnClick(refs['02'])}}>
                 <Box component="span">02.</Box> Work
             </Typography>
-            <Typography>
+            <Typography onClick={() => scrollOnClick(refs['03'])}>
                 <Box component="span">03.</Box> Contact
             </Typography>
         </>

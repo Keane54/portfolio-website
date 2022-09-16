@@ -19,7 +19,7 @@ const Skills = () => {
                 pl: 2.5,
                 '&::before': {
                     content: '"▹"',
-                    color: theme.palette.primary.main,
+                    color: theme.palette.secondary.main,
                     position: 'absolute',
                     left: 0
                 }

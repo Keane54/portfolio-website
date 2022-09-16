@@ -24,13 +24,17 @@ const Featured = ( { props, imgLeft }) => {
             mb: 20,
             alignItems: 'center',
             '@media (max-width: 900px)': {
-                py: 5
+                mt: 2,
+                mb: 7,
+                boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                borderRadius: '5px'
             }
         }}>
 
+        
             <ProjectImage src={img} href={links.website.url} imgLeft={imgLeft} />
 
-            <Box sx={{
+            <Box className="mobileTransitionOut" sx={{
                 gridColumn: imgLeft ? '6 / -1' : '1 / 8',
                 gridRow: '1 / 2',
                 textAlign: imgLeft ? 'right' : 'left',

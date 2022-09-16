@@ -24,7 +24,7 @@ const SectionHeading = ({ text, sectionNum }) => {
           display: 'flex',
           alignItems: 'center',
           gap: isDesktop ? 1.25 : 2,
-          width: '100%',
+          width: isDesktop ? 'fit-content': '100%',
           mb: 2,
           '&::after': {
             content: '""',
