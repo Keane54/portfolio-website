@@ -16,9 +16,10 @@ const MobileSidebar = () => {
                 
                 <Box sx={{
                     position: 'fixed',
-                    right: open ? '0' : '-30vw',
-                    backgroundColor: 'whitesmoke',
                     top: 0,
+                    right: 0,
+                    transform: open ? 'translateX(0)' : 'translateX(100%)',
+                    backgroundColor: 'whitesmoke',
                     height: '100vh',
                     width: '30vw',
                     transition: 'all 250ms ease-in-out',
@@ -30,7 +31,6 @@ const MobileSidebar = () => {
                     boxShadow: open ? 'rgba(0, 0, 0, 0.2) 0px 18px 50px -10px' : 'none',
                     '@media (max-width: 600px)': {
                         width: '65vw',
-                        right: open ? '0' : '-65vw'
                     }
                 }}>
                     <MobileSidebarContent/>

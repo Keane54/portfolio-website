@@ -86,7 +86,7 @@ export default function Home() {
               , and enjoy working with communities and likeminded people to build tools for everyday users.
             </Typography>
 
-            <Button sx={{
+            <Button onClick={() => scrollOnClick(refs['02'])} sx={{
               mt: 3.8,
               textTransform: 'none', 
               border: `solid 2px ${theme.palette.primary.main}`,

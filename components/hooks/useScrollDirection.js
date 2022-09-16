@@ -22,6 +22,5 @@ export const useScrollDirection = () => {
         })
     }, [direction])
 
-    console.log(direction)
     return direction
 }
