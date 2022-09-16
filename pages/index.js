@@ -121,7 +121,13 @@ export default function Home() {
             </Container>
 
             {/* disableGutters needs to check opposite of isDesktop */}
-            <Container disableGutters={!isDesktop} sx={{mt: isDesktop ? 25 : 15}}>
+            <Container disableGutters={!isDesktop} 
+            sx={{
+              mt: isDesktop ? 25 : 15,
+              '& .projectBox:first-of-type': {
+                mt: 3
+              }
+            }}>
               <Container disableGutters={!isDesktop}>
                 <SectionHeading text={"My Projects"} sectionNum={'02'}/>
                 
@@ -132,7 +138,11 @@ export default function Home() {
                   })
                 }
 
-                <Container disableGutters={!isDesktop} sx={{mb: 12}}>
+                <Container disableGutters={!isDesktop} 
+                sx={{
+                  mb: 12, 
+                  mt: isDesktop ? 25 : 15
+                }}>
                   <Container disableGutters={!isDesktop}>
 
                       <SectionHeading sectionNum={'03'} text={"What's next?"}/>

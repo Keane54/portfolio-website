@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useTheme } from "@emotion/react"
-import { Typography, useMediaQuery } from "@mui/material"
+import { Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import ProjectDesc from "./ProjectDesc"
 import ProjectImage from "./ProjectImage"
@@ -13,7 +12,7 @@ const Featured = ( { props, imgLeft }) => {
     const {title, desc, technologies, img, links} = props
 
     return (
-        <Box sx={{
+        <Box className="projectBox" sx={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             position: 'relative', 
