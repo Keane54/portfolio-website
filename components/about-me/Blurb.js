@@ -25,7 +25,7 @@ const Blurb = ({ isDesktop }) => {
                 </Typography>
 
                 <Typography>
-                    My current work project is to rebuild my companies accounts section using NextJS, and I continue to work on personal projects in my spare time, expanding my knowledge of NextJS &amp; React.
+                    My current work project is to rebuild my companies accounts section using NextJS, and I continue to work on personal projects in my spare time, expanding my knowledge of NextJS, React, and other technologies.
                 </Typography>
 
                 <Skills/>
