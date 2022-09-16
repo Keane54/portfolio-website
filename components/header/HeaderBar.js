@@ -41,7 +41,8 @@ const HeaderBar = ( { theme } ) => {
             color:'black', 
             position: 'sticky', 
             transition: 'transform 250ms ease-in-out',
-            transform: isDesktop && scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)'
+            transform: scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)',
+            overflowX: 'hidden'
         }}>
             <Container sx={{
                 '@media (max-width: 1280px) and (min-width: 900px)': {

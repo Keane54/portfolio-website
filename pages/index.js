@@ -58,6 +58,7 @@ export default function Home() {
             transition: 'filter 200ms ease-in-out',
             mt: 6, 
             mb: 2,
+            overflow: 'hidden',
             '& .highlightedText': {
               color: theme.palette.primary.main, 
               fontWeight: 500
