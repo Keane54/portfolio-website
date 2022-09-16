@@ -39,10 +39,10 @@ const HeaderBar = ( { theme } ) => {
         <AppBar elevation={0} sx={{
             background: 'white', 
             color:'black', 
-            position: 'sticky', 
+            position: 'fixed', 
             top: 0,
-            transition: 'top 300ms ease-in-out',
-            top: scrollDirection === "down" ? '-100%' : '0px',
+            transition: 'transform 250ms ease-in-out',
+            transform: scrollDirection === "down" ? 'translateY(-100%)' : 'translateY(0)',
         }}>
             <Container sx={{
                 '@media (max-width: 1280px) and (min-width: 900px)': {
