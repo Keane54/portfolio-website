@@ -1,9 +1,29 @@
 import { Typography, Stack, Box } from "@mui/material"
 import Skills from "./Skills"
+import { useEffect, useState } from "react"
+import useIntersectionObserver from "../../hooks/useIntersectionObserver"
 
 const Blurb = ({ isDesktop }) => {
+
+    const [containerRef, isVisible] = useIntersectionObserver({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.35
+      })
+    
+      const [madeVisible, setMadeVisible] = useState(false)
+    
+      useEffect(() => {
+          isVisible && !madeVisible ? setMadeVisible(true) : null
+      }, [isVisible, madeVisible])
+
     return (
-        <Box sx={{width: isDesktop ? '60%' : '100%'}}>
+        <Box ref={containerRef} sx={{
+            width: isDesktop ? '60%' : '100%',
+            transition: 'opacity 500ms ease-in-out, transform 800ms ease-in-out',
+            opacity: madeVisible ? 1 : 0,
+            transform: madeVisible ? 'translateY(0)' : 'translateY(10%)'
+        }}>
             <Stack gap={2} sx={{
             '& .MuiTypography-root': {
                 fontSize: 18

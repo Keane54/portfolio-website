@@ -1,7 +1,8 @@
 import { Typography, Box } from "@mui/material"
 import { AppContext } from "/pages"
-import { useContext, useEffect, useRef } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { useTheme } from "@emotion/react"
+import useIntersectionObserver from "../hooks/useIntersectionObserver"
 
 const SectionHeading = ({ text, sectionNum }) => {
   
@@ -18,8 +19,21 @@ const SectionHeading = ({ text, sectionNum }) => {
 
   const theme = useTheme()
 
+  const [containerRef, isVisible] = useIntersectionObserver({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.35
+  })
+
+  const [madeVisible, setMadeVisible] = useState(false)
+
+  useEffect(() => {
+      isVisible && !madeVisible ? setMadeVisible(true) : null
+  }, [isVisible, madeVisible])
+
   return (
-      <Typography ref={sectionRef} sx={{
+      // Merge refs
+      <Typography ref={el => {sectionRef.current = el; containerRef.current = el}} sx={{
           fontSize: 22, 
           display: 'flex',
           alignItems: 'center',
@@ -27,6 +41,9 @@ const SectionHeading = ({ text, sectionNum }) => {
           width: isDesktop ? 'fit-content': '100%',
           mb: 2,
           pt: 10,
+          transition: 'opacity 500ms ease-in-out, transform 800ms ease-in-out',
+          opacity: madeVisible ? 1 : 0,
+          transform: madeVisible ? 'translateY(0)' : 'translateY(10%)',
           '&::after': {
             content: '""',
             backgroundColor: theme.palette.secondary.main,

@@ -3,11 +3,6 @@ import { useEffect, useState } from "react"
 
 
 const DisplayGreeting = () => {
-    const [greeting, setGreeting] = useState("Hello")
-
-    useEffect(() => {
-        getTime()
-    }, [])
 
     const getTime = () => {
         const currentDate = new Date()
@@ -23,6 +18,12 @@ const DisplayGreeting = () => {
             return setGreeting("Evening")
         }
     }
+
+    const [greeting, setGreeting] = useState()
+
+    useEffect(() => {
+        getTime()
+    }, [])
 
     return <Box className='highlightedText' component="span"> {greeting} </Box>
 }

@@ -6,7 +6,7 @@ import DesktopMenu from './DesktopMenu';
 import MobileSidebar from './MobileSidebar';
 import { useContext } from 'react';
 import { AppContext } from '../../pages';
-import { useScrollDirection } from '../hooks/useScrollDirection';
+import { useScrollDirection } from '../../hooks/useScrollDirection';
 
 const squidWiggle = keyframes`
 0% {

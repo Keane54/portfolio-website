@@ -11,7 +11,6 @@ import MyPhoto from '../components/about-me/MyPhoto';
 import Featured from '../components/my-work/Featured';
 import { projects } from '../src/projects';
 import FooterText from '../components/FooterText';
-import { useScrollDirection } from '../components/hooks/useScrollDirection';
 
 export const AppContext = createContext()
 
