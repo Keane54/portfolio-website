@@ -1,13 +1,27 @@
 import { useTheme } from "@emotion/react"
 import { Box } from "@mui/system"
+import useIntersectionObserver from "../../hooks/useIntersectionObserver"
+import { useEffect, useState } from "react"
 
 const ProjectLinks = ( { links, imgLeft }) => {
     const theme = useTheme()
 
     const keys = Object.keys(links)
 
+    const [containerRef, isVisible] = useIntersectionObserver({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.35
+    })
+
+    const [madeVisible, setMadeVisible] = useState(false)
+
+    useEffect(() => {
+        isVisible && !madeVisible ? setMadeVisible(true) : null
+    }, [isVisible, madeVisible])
+
     return (
-        <Box sx={{
+        <Box ref={containerRef} sx={{
             display: 'flex', 
             justifyContent: imgLeft ? 'flex-end' : 'flex-start',
             gap: 2.5,

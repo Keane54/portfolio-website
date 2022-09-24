@@ -8,7 +8,7 @@ const Blurb = ({ isDesktop }) => {
     const [containerRef, isVisible] = useIntersectionObserver({
         root: null,
         rootMargin: '0px',
-        threshold: 0.35
+        threshold: 0.2
       })
     
       const [madeVisible, setMadeVisible] = useState(false)

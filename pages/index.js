@@ -11,6 +11,7 @@ import MyPhoto from '../components/about-me/MyPhoto';
 import Featured from '../components/my-work/Featured';
 import { projects } from '../src/projects';
 import FooterText from '../components/FooterText';
+import ContactSection from '../components/get-in-touch/ContactSection';
 
 export const AppContext = createContext()
 
@@ -146,38 +147,7 @@ export default function Home() {
 
                       <SectionHeading sectionNum={'03'} text={"What's next?"}/>
 
-                      <Stack sx={{alignItems: 'center'}}>
-                        <Typography sx={{fontWeight: 600, fontSize: 50, color: theme.palette.primary.main}}>
-                          Get In Touch
-                        </Typography>
-
-                        <Typography sx={{
-                          textAlign: 'center', 
-                          mb: 4,
-                          width: isDesktop ? '50vw' : '80vw',
-                          
-                        }}>
-                          I&apos;m currently interested in new opportunities, and my inbox is always open.
-                          If you have any questions or even just want to say hello, send me an email
-                          or message me on LinkedIn and I&apos;ll do my best to reply!
-                        </Typography>
-
-                        <Button sx={{
-                          border: `2px solid ${theme.palette.primary.main}`,
-                          py: 1.2,
-                          px: 5.5,
-                          fontSize: 24,
-                          textTransform: 'none',
-                          '& a': {
-                            textDecoration: 'none',
-                            color: 'inherit'
-                          }
-                        }}>
-                          <a href="mailto:ollyfudgey5@gmail.com" target="_blank" rel="noreferrer">
-                            Say Hello
-                          </a>
-                        </Button>
-                      </Stack>
+                      <ContactSection/>
 
                   </Container>
                 </Container>
