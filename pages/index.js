@@ -45,7 +45,7 @@ export default function Home() {
         animation: 'fadeInAnimation ease 2s',
         animationIterationCount: 1,
         animationFillMode: 'forwards',
-        animationDelay: '0.25s',
+        animationDelay: '0.3s',
         '@keyframes fadeInAnimation': {
           '0%': {
               opacity: 0
