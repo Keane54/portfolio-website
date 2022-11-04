@@ -150,6 +150,9 @@ export default function Home() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 12,
+                  '@media (max-width: 900px)': {
+                    gap: 4
+                  }
                 }}>
                 {
                   projects.map((project, index) => {
