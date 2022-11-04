@@ -39,7 +39,22 @@ export default function Home() {
         <link rel="icon" href="squidlogo.svg" />
       </Head>
 
-      <Box sx={{overflowX: 'clip'}}>
+      <Box sx={{
+        overflowX: 'clip',
+        opacity: 0,
+        animation: 'fadeInAnimation ease 2s',
+        animationIterationCount: 1,
+        animationFillMode: 'forwards',
+        animationDelay: '0.25s',
+        '@keyframes fadeInAnimation': {
+          '0%': {
+              opacity: 0
+          },
+          '100%': {
+              opacity: 1
+          }
+        }
+      }}>
         <AppContext.Provider 
           value={{
             open: open, 
