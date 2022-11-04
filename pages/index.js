@@ -148,13 +148,18 @@ export default function Home() {
                 
                 <Box sx={{
                   display: 'flex',
+                  flex: 1,
                   flexDirection: 'column',
-                  gap: 12
+                  gap: 12,
                 }}>
                 {
                   projects.map((project, index) => {
                     // We see if the remainder of the current index is 0 to alternate project images left/right.
-                    return <Featured props={project} imgLeft={index % 2 === 0 ? true : false} key={index}/>
+                    return (
+                      <Box key={index}>
+                        <Featured props={project} imgLeft={index % 2 === 0 ? true : false}/>
+                      </Box>
+                    )
                   })
                 }
                 </Box>
