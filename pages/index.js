@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, useMediaQuery } from '@mui/material';
+import { Button, Typography, useMediaQuery } from '@mui/material';
 import { Box, Container, useTheme } from '@mui/system';
 import Head from 'next/head'
 import { createContext, useEffect, useState } from 'react';
@@ -114,7 +114,7 @@ export default function Home() {
 
                   <Blurb isDesktop={isDesktop}/>
                   <MyPhoto isDesktop={isDesktop}/>
-                  
+                
                 </Box>
 
               </Box>
@@ -131,12 +131,18 @@ export default function Home() {
               <Container disableGutters={!isDesktop}>
                 <SectionHeading text={"My Projects"} sectionNum={'02'}/>
                 
+                <Box sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12
+                }}>
                 {
                   projects.map((project, index) => {
                     // We see if the remainder of the current index is 0 to alternate project images left/right.
                     return <Featured props={project} imgLeft={index % 2 === 0 ? true : false} key={index}/>
                   })
                 }
+                </Box>
 
                 <Container disableGutters={!isDesktop} 
                 sx={{
@@ -146,7 +152,6 @@ export default function Home() {
                   <Container disableGutters={!isDesktop}>
 
                       <SectionHeading sectionNum={'03'} text={"What's next?"}/>
-
                       <ContactSection/>
 
                   </Container>

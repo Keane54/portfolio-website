@@ -12,7 +12,7 @@ const ProjectImage = ({ src, href, imgLeft }) => {
             overflow: 'hidden',
             display: 'flex',
             position: 'relative',
-            filter: 'grayscale(50%) contrast(1) brightness(40%)',
+            filter: 'grayscale(50%) contrast(1) brightness(55%)',
             backgroundColor: 'black',
             borderRadius: '5px',
             alignItems: 'center',
@@ -20,13 +20,12 @@ const ProjectImage = ({ src, href, imgLeft }) => {
             transition: 'all 200ms ease-in-out',
             '@media (max-width: 900px)': {
                 gridColumn: '1 / -1',
-                filter: 'grayscale(50%) contrast(1) brightness(40%)',
                 height: '100%',
                 backgroundColor: '#232323',
                 cursor: 'pointer',
             },
             '&:hover': {
-                filter: 'grayscale(10%) contrast(1) brightness(40%)',
+                filter: 'grayscale(10%) contrast(1) brightness(70%)',
             },
             '& img': {
                 objectFit: 'cover',

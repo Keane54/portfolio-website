@@ -44,7 +44,7 @@ const Featured = ( { props, imgLeft }) => {
         }}>
 
         
-            <ProjectImage src={img} href={links.website.url} imgLeft={imgLeft} />
+            <ProjectImage src={img} href={links.website?.url} imgLeft={imgLeft} />
 
             <Box className="mobileTransitionOut" sx={{
                 gridColumn: imgLeft ? '6 / -1' : '1 / 8',
@@ -71,7 +71,7 @@ const Featured = ( { props, imgLeft }) => {
                     }}>
                         Featured Project
                     </Typography>
-                    <ProjectTitle projectTitle={title} href={links.website.url}/>
+                    <ProjectTitle projectTitle={title} href={links.website?.url}/>
 
                     <ProjectDesc desc={desc}/>
 

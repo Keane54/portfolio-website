@@ -1,10 +1,10 @@
 export const projects = [
     {
         title: 'BookaBuilderUK Ticket System',
-        desc: `We needed to implement a ticket system at BookaBuilder to
+        desc: `We needed to implement a ticket system at BookaBuilderUK to
         categorise and track customer queries and complaints, as well as internal
         issues. I led development on the ticket system and built both the front-end components 
-        and back-end API to handle submissions.`,
+        and part of the backend API to handle submissions.`,
         technologies: ['JavaScript', 'PHP', 'HTML', 'CSS'],
         img: '/supportform.webp',
         links: {
