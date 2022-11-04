@@ -148,7 +148,6 @@ export default function Home() {
                 
                 <Box sx={{
                   display: 'flex',
-                  flex: 1,
                   flexDirection: 'column',
                   gap: 12,
                 }}>
