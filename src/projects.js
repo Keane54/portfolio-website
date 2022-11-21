@@ -11,6 +11,10 @@ export const projects = [
             website: {
                 widget: '/external.svg',
                 url: 'https://support.bookabuilderuk.com/'
+            },
+            github: {
+                widget: '/githubmark.svg',
+                url: 'https://github.com/Keane54/ticket-system'
             }
         }
     },
