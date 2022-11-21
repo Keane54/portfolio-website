@@ -8,13 +8,13 @@ export const projects = [
         technologies: ['JavaScript', 'PHP', 'HTML', 'CSS'],
         img: '/supportform.webp',
         links: {
-            website: {
-                widget: '/external.svg',
-                url: 'https://support.bookabuilderuk.com/'
-            },
             github: {
                 widget: '/githubmark.svg',
                 url: 'https://github.com/Keane54/ticket-system'
+            },
+            website: {
+                widget: '/external.svg',
+                url: 'https://support.bookabuilderuk.com/'
             }
         }
     },
