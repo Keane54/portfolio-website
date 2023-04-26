@@ -23,12 +23,12 @@ const ContactText = () => {
         <Typography ref={containerRef} sx={{
             textAlign: 'center', 
             mb: 4,
-            width: isDesktop ? '50vw' : '80vw',
+            width: '100%',
             transition: 'opacity 500ms ease-in-out, transform 800ms ease-in-out',
             opacity: madeVisible ? 1 : 0,
             transform: madeVisible ? 'translateY(0)' : 'translateY(10%)'
           }}>
-            I&apos;m currently interested in new opportunities, and my inbox is always open.
+            I&apos;m not currently looking for new opportunities, but my inbox is always open.
             If you have any questions or even just want to say hello, send me an email
             or message me on LinkedIn and I&apos;ll do my best to reply!
         </Typography>
